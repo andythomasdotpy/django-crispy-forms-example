@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
 
 
 {% block title %}Home Page{% endblock %}
@@ -6,5 +7,10 @@
 {% block css_styles %} {% endblock %}
 
 {% block context %}
-    {{ form.as_p}}
+    <div class="container">
+        <form method="post" class="my-class">
+            {{ form|crispy }}
+        </form>
+    </div>
+
 {% endblock %}
